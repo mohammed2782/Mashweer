@@ -1,0 +1,165 @@
+table.display {
+	background-color: #E5E1E7;
+	border: 0px solid #000000;
+	border-collapse: collapse;
+	width: 100%;
+	margin: 20px 0 20px 0;
+}
+
+table.display td {
+	border: 1px solid #999999;
+	font-family: Helvetica, Arial;
+	font-size: 11px;
+	color: #000000;
+}
+
+table.display td.edit {
+	border: 1px solid #999999;
+	font-family: Helvetica, Arial;
+	font-size: 11px;
+	color: #000000;
+	width: 50px;
+}
+
+table.display thead tr { /*Table Header*/
+	background-color: #CC0000 /*#558EC8*/;
+	border: 1px solid #999999;
+}
+
+table.display tr.odd {
+	background-color: #ffffff;
+}
+
+table.display tr.even {
+	background-color: #FFE9BB /*#F1F5FA*/;
+}
+
+table.display th.sorted { /*SN*/
+	background-color: #000000 /*#1A988E*/;
+}
+
+table.display th {
+	color: white;
+	text-align
+	=center;
+}
+
+table.display th a,th a:visited {
+	color: white;
+	font-family: Helvetica, Arial;
+	font-size: 11px;
+	text-decoration: bold;
+}
+
+table.display th a:hover {
+	font-family: Helvetica, Arial;
+	font-size: 11px;
+	text-decoration: bold;
+	color: #000000;
+}
+
+table.display th.sorted a,th.sortable a {
+	background-position: right;
+	display: block;
+	width: 100%;
+	font-family: Helvetica, Arial;
+	font-size: 11px;
+	text-decoration: bold;
+}
+
+th.sortable a {
+	background-repeat: no-repeat;
+	width: 100%;
+	background-image: url(../images/sort_norm.gif);
+	font-family: Helvetica, Arial;
+	font-size: 11px;
+	text-decoration: bold;
+}
+
+th.title {
+	font-family: Helvetica, Arial;
+	font-size: 11px;
+	text-decoration: bold;
+	margin-right: 15px;
+}
+
+th.order1 a {
+	background-repeat: no-repeat;
+	background-image: url(../images/sort_dsc.gif);
+}
+
+th.order2 a {
+	background-repeat: no-repeat;
+	background-image: url(../images/sort_asc.gif);
+}
+
+span.export {
+	background-repeat: no-repeat;
+	width: 20px;
+	color: white;
+	vertical-align: middle;
+}
+
+span.excel {
+	background-image: url(../images/hl_mid.jpg);
+	background-repeat: repeat-x;
+	width: 20px;
+	color: white;
+	vertical-align: middle;
+}
+
+span.csv {
+	background-image: url(../images/hl_mid.jpg);
+	background-repeat: repeat-x;
+	width: 20px;
+	color: white;
+	vertical-align: middle;
+}
+
+span.xml {
+	background-image: url(../images/hl_mid.jpg);
+	background-repeat: repeat-x;
+}
+
+span.pagebanner {
+	background-color: white;
+	border: 1px #999;
+	padding: 2px 4px 2px 4px;
+	width: 100%;
+	margin-top: 11px;
+	display: block;
+	border-bottom: none;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #000000;
+	text-align: left;
+}
+
+span.pagelinks {
+	background-color: white;
+	border: 1px #999;
+	padding: 2px 4px 2px 4px;
+	width: 100%;
+	display: block;
+	border-top: none;
+	margin-bottom: -5px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #000000;
+	text-align: right;
+}
+
+div.exportlinks {
+	background-color: white;
+	border: 1px #999;
+	padding: 2px 4px 2px 4px;
+	margin: 2px 0 10px 0;
+	width: 100%;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font- font-weight: normal;
+	color: #000000;
+	text-align: right;
+}

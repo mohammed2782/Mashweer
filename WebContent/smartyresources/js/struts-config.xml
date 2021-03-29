@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+
+<struts-config>
+
+	<form-beans>
+		<form-bean name="loginForm" type="com.penta.authentication.form.LoginForm" />
+		<form-bean name="showAdminDisplayForm" type="com.penta.admin.form.ShowAdminDisplayForm" />
+		<form-bean name="showUserDisplayForm" type="com.penta.user.form.ShowUserDisplayForm" />
+		<form-bean name="SettingsForm" type="com.penta.admin.form.SettingsForm" />
+		<form-bean name="addEForm" type="com.penta.admin.form.AddEForm" />
+		<form-bean name="addPresentationForm" type="com.penta.admin.form.AddPresentationForm" />
+		<form-bean name="addNewsForm" type="com.penta.admin.form.AddNewsForm" />
+		<form-bean name="addUserGroupForm" type="com.penta.admin.form.AddUserGroupForm" />
+		<form-bean name="addUserForm" type="com.penta.admin.form.AddUserForm" />
+
+	</form-beans>
+
+	<global-exceptions />
+
+	<global-forwards>
+		<forward name="welcome" path="/PALogin.jsp" />
+	</global-forwards>
+
+	<action-mappings>
+
+		<action path="/login" type="com.penta.authentication.action.LoginAction"
+			name="loginForm" scope="session" validate="true" input="/PALogin.jsp">
+
+			<forward name="adminUserDisplaylist" path="/showAdminDisplay.do?do=ShowUserGroup"
+				redirect="true" />
+			<forward name="userList" path="/PAUserList.jsp" redirect="true" />
+		</action>
+
+		<!-- <action path="/showAdminDisplay" type="com.pa.admin.action.ShowAdminDispalyAction" 
+			name="showAdminDisplayForm" scope="session"> <forward name="adminDisplaylist" 
+			path="/showAdminDisplay.jsp" /> </action> <action path="/showAdminDisplayUG" 
+			type="com.pa.admin.action.ShowAdminDispalyAction" name="showAdminDisplayForm" 
+			scope="session"> <forward name="adminDisplaylist" path="/showAdminDisplay.jsp" 
+			/> </action> -->
+
+		<action path="/showAdminDisplay" type="com.penta.admin.action.ShowAdminDispalyAction"
+			parameter="do" name="showAdminDisplayForm" scope="session">
+			<!-- <forward name="adminDisplaylist" path="/showAdminDisplay.jsp" /> -->
+			<forward name="adminDisplaylist" path="/PAUserList.jsp" />
+
+		</action>
+
+		<action path="/deleteAdmin" parameter="do"
+			type="com.penta.admin.action.DeleteAdminAction" name="showAdminDisplayForm"
+			scope="session">
+
+			<forward name="adminUsergroupDisplaylist" path="/showAdminDisplay.do?do=ShowUserGroup"
+				redirect="true" />
+			<forward name="adminUserDisplaylist" path="/showAdminDisplay.do?do=ShowUser"
+				redirect="true" />
+			<forward name="adminPresentationDisplaylist" path="/showAdminDisplay.do?do=ShowPresentation"
+				redirect="true" />
+			<forward name="adminNewsDisplaylist" path="/showAdminDisplay.do?do=ShowNews"
+				redirect="true" />
+			<forward name="adminEFormDisplaylist" path="/showAdminDisplay.do?do=ShowEForm"
+				redirect="true" />
+			<forward name="adminNonActivityUserDisplaylist" path="/showAdminDisplay.do?do=ShowNonActivityUser"
+				redirect="true" />
+			<forward name="adminDormantUserDisplaylist" path="/showAdminDisplay.do?do=ShowDormantUser"
+				redirect="true" />
+			<forward name="adminSessionSummaryDisplaylist" path="/showAdminDisplay.do?do=ShowSessionSummary"
+				redirect="true" />
+			<forward name="adminUserAuditDisplaylist" path="/showAdminDisplay.do?do=ShowUserAudit"
+				redirect="true" />
+			<forward name="adminPasswordHistoryDisplaylist" path="/showAdminDisplay.do?do=ShowPasswordHistory"
+				redirect="true" />
+
+		</action>
+
+
+
+
+
+		<action path="/AddNews" type="com.penta.admin.action.AddNewsAction"
+			name="addNewsForm" scope="request" input="/AddNews.jsp">
+			<forward name="success" path="/Result.jsp" />
+
+		</action>
+
+		<action path="/editNews" type="com.penta.admin.action.EditNewsAction"
+			name="addNewsForm" scope="request">
+			<forward name="success" path="/AddNews.jsp" />
+		</action>
+
+		<action path="/Add_Eform" type="com.penta.admin.action.AddEFormAction"
+			name="addEForm" scope="request" input="/AddEform.jsp">
+			<forward name="success" path="/AddEForm.jsp" />
+
+		</action>
+		<action path="/editEForm" type="com.penta.admin.action.EditEFormAction"
+			name="addEForm" scope="request">
+			<forward name="success" path="/AddEForm.jsp" />
+		</action>
+
+		<action path="/add_presentation" type="com.penta.admin.action.AddPresentationAction"
+			name="addPresentationForm" scope="request" input="/AddPresentation.jsp">
+			<forward name="success" path="/AddPresentation.jsp" />
+		</action>
+		<action path="/editPresentation" type="com.penta.admin.action.EditPresentationAction"
+			name="addPresentationForm" scope="request">
+			<forward name="success" path="/AddPresentation.jsp" />
+		</action>
+
+		<action path="/addUserGroup" type="com.penta.admin.action.AddUserGroupAction"
+			name="addUserGroupForm" scope="request">
+			<forward name="success" path="/success.jsp" />
+		</action>
+
+
+		<action path="/addUser" type="com.penta.admin.action.AddUserAction"
+			scope="request" name="addUserForm" input="/AddUser.jsp">
+			<forward name="success" path="/AddUser.jsp" />
+		</action>
+
+		<action path="/editUser" type="com.penta.admin.action.EditUserAction"
+			name="addUserForm" scope="request">
+			<forward name="success" path="/AddUser.jsp" />
+		</action>
+
+		<action path="/FetchAgentName" type="com.penta.admin.action.AjaxFetchUserName"
+			scope="request" input="/AddUser.jsp">
+		</action>
+
+
+		<action path="/getScreenDetails" type="com.penta.user.action.GetScreenDetailsAction"
+			name="showUserDisplayForm" scope="session">
+			<forward name="userDisplaylist" path="/showUserDisplay.jsp" />
+
+		</action>
+
+		<action path="/showUserDisplay" type="com.penta.user.action.ShowUserDisplayAction"
+			name="showUserDisplayForm" scope="session">
+			<forward name="success" path="/showUserDisplay.jsp" />
+		</action>
+
+	</action-mappings>
+
+	<controller processorClass="org.apache.struts.tiles.TilesRequestProcessor" />
+
+	<message-resources parameter="com/penta/resources/ApplicationResource" />
+
+	<!-- ========================= Tiles plugin =============================== -->
+	<!-- This plugin initialize Tiles definition factory. This later can takes 
+		some parameters explained here after. The plugin first read parameters from 
+		web.xml, thenoverload them with parameters defined here. All parameters are 
+		optional. The plugin should be declared in each struts-config file. - definitions-config: 
+		(optional) Specify configuration file names. There can be several comma separated 
+		file names (default: ?? ) - moduleAware: (optional - struts1.1) Specify if 
+		the Tiles definition factory is module aware. If true (default), there will 
+		be one factory for each Struts module. If false, there will be one common 
+		factory for all module. In this later case, it is still needed to declare 
+		one plugin per module. The factory will be initialized with parameters found 
+		in the first initialized plugin (generally the one associated with the default 
+		module). true : One factory per module. (default) false : one single shared 
+		factory for all modules - definitions-parser-validate: (optional) Specify 
+		if xml parser should validate the Tiles configuration file. true : validate. 
+		DTD should be specified in file header (default) false : no validation Paths 
+		found in Tiles definitions are relative to the main context. -->
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+
+	<!-- ========================= Validator plugin ================================= -->
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames"
+			value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml" />
+	</plug-in>
+
+</struts-config>

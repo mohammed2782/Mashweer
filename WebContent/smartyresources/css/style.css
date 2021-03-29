@@ -1,0 +1,60 @@
+@charset "utf-8";
+/* CSS Document */
+table.example {
+	border: 1px solid #666;
+	width: 100%;
+	margin: 20px 0 20px 0 !important;
+}
+
+table.example   th,td {
+	padding: 2px 4px 2px 4px !important;
+	text-align: left;
+	vertical-align: top;
+	width: 100%;
+}
+
+table.example  thead tr {
+	background-color: #999999;
+}
+
+table.example  th.sorted {
+	background-color: #CCCCCC;
+}
+
+table.example  th a,th a:visited {
+	color: black;
+}
+
+table.example  th a:hover {
+	text-decoration: underline;
+	color: black;
+}
+
+table.example  th.sorted a,th.sortable a {
+	background-position: right;
+	display: block;
+	width: 100%;
+}
+
+table.example  th.sortable a {
+	background-image: url(../images/sort_norm.gif);
+	background-repeat: no-repeat;
+}
+
+table.example  th.order1 a {
+	background-image: url(../images/sort_asc.gif);
+	background-repeat: no-repeat;
+}
+
+table.example  th.order2 a {
+	background-image: url(../images/sort_dsc.gif);
+	background-repeat: no-repeat;
+}
+
+table.example   tr.even {
+	background-color: #ccc;
+}
+
+table.example   tr.odd {
+	background-color: #fff;
+}

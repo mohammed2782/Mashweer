@@ -1,0 +1,24 @@
+body {
+	color: black;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+.jadual {
+	BORDER: #999999 0px;
+	BORDER-COLLAPSE: collapse;
+	BACKGROUND-COLOR: #666666;
+	border-spacing: 0px
+}
+
+.jadual td {
+	BACKGROUND-COLOR: #CC0000;
+}
+
+.jadual alt td {
+	BACKGROUND-COLOR: #999999;
+}
+
+.jadual th {
+	BACKGROUND-COLOR: #66CCFF;
+}
